@@ -44,7 +44,7 @@
        todoList.push(todoItem);
        document.querySelector("#todo").innerHTML += "<li>" + todoItem + "</li>";
    }
-$("todo")
+
 
 console.log(todoList);
 
@@ -52,8 +52,8 @@ console.log(todoList);
    $("#plus").on("click",updateTodo)
 
     var setTime = function(){
-        console.log("Update Things");
-        document.querySelector("#time").innerText = time;
+        var time = moment().format('LT');
+        $("#time").html(time);
         }
 
     setInterval(setTime, 1000);
