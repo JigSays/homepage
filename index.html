@@ -26,9 +26,37 @@
         </div>
     </div>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
-    <script type="text/javascript" src="dom.js"></script>
+    <script type="text/javascript" src="https://jigsays.github.io/dom/dom.js"></script>
     <script type="text/javascript">
     var time = moment().format('LT');
+    
+
+    var toggleHide = function(){
+        // console.log("nothing works")
+        $("#todo-container").toggleClass("hide");
+    }   
+        $("#todo-title").on("click", toggleHide);
+    var todoList = [];
+
+    var updateTodo = function (){
+       todoItem = prompt("What else do you have to do?");
+    //    console.log(todoItem);
+       todoList.push(todoItem);
+       document.querySelector("#todo").innerHTML += "<li>" + todoItem + "</li>";
+   }
+$("todo")
+
+console.log(todoList);
+
+
+   $("#plus").on("click",updateTodo)
+
+    var setTime = function(){
+        console.log("Update Things");
+        document.querySelector("#time").innerText = time;
+        }
+
+    setInterval(setTime, 1000);
 
     </script>
 </body>
